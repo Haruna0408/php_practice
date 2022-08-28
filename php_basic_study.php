@@ -110,4 +110,43 @@
     for ($i = 0; $i < $count; $i++) {
         echo $i , "回目:" , $fruits[$i] , PHP_EOL;
     }
+
+    //関数を定義
+    function sum() {
+        $result = 0;
+        for ($i = 1; $i <= 9; $i++) {
+            $result = $result + $i;
+        }
+        echo $result , PHP_EOL;
+    }
+    //関数を呼び出す
+    sum(); // ここで関数が実行され1~9の足し算結果が表示される
+    sum();
+    sum();
+
+    //関数に引数（ひきすう）を渡す
+    function sum1($a, $b) { //$aから$bまでの不特定な数の足し算を行う
+        $result = 0;
+        for ($i = $a; $i <= $b; $i++) {
+            $result = $result + $i;
+        }
+        echo $result , PHP_EOL;
+    }
+    sum1(1, 9);
+    sum1(1, 1000);
+    sum1(1000, 9999);
+
+    //関数を呼び出す度に表示させるのではなく、結果($result)の値を変数として持ちたいとき
+    function sum2($a, $b) {
+        $result = 0;
+        for ($i = $a; $i <= $b; $i++) {
+            $result = $result + $i;
+        }
+        return $result;
+    }
+    //関数を呼び出す
+    $sum1 = sum2(1, 9);
+    $sum2 = sum2(1, 1000);
+    $sum3 = sum2(1000, 9999);
+
 ?>
